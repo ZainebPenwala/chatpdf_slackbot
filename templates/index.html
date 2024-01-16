@@ -1,0 +1,228 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>My Webpage</title>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #f8c9c5, #f9d6b8, #ffe9a8, #e4f3a8, #aee7d1, #c3c5f2, #e7b9e7);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 48px;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-top: 20px;
+    }
+
+    .upload-form {
+      margin-top: 30px;
+    }
+
+    .upload-form input[type="file"] {
+      display: none;
+    }
+
+    .upload-form label {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .upload-form input[type="submit"] {
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Buddy</h1>
+
+  <form class="upload-form">
+    <label for="pdf-upload">Upload PDF</label>
+    <input type="file" id="pdf-upload" accept=".pdf">
+    <input type="submit" value="Submit">
+  </form>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Webpage</title>
+  <style>
+    body {
+      background: linear-gradient(-45deg, #f8c9c5, #f9d6b8, #ffe9a8, #e4f3a8, #aee7d1, #c3c5f2, #e7b9e7);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    h1 {
+      font-family: Arial, sans-serif;
+      font-size: 48px;
+      color: white;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      margin-top: 20px;
+    }
+
+    .upload-form {
+      margin-top: 30px;
+    }
+
+    .upload-form input[type="file"] {
+      display: none;
+    }
+
+    .upload-form label {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .upload-form input[type="submit"] {
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .chat-container {
+      position: fixed;
+      bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .chat-container .message {
+      margin-bottom: 10px;
+    }
+
+    .chat-container .query {
+      background-color: #efefef;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .chat-container .response {
+      background-color: #d9f0ff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .chat-container input[type="text"] {
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+      width: 300px;
+    }
+
+    .chat-container input[type="submit"] {
+      margin-top: 10px;
+      font-family: Arial, sans-serif;
+      font-size: 18px;
+      color: white;
+      background-color: #333;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Buddy</h1>
+
+  <form class="upload-form" onsubmit="uploadPDF(event)">
+    <label for="pdf-upload">Upload PDF</label>
+    <input type="file" id="pdf-upload" accept=".pdf">
+    <input type="submit" value="Submit">
+  </form>
+
+  <div class="chat-container" id="chatContainer" style="display: none;">
+    <div class="message query">User query: <span id="queryText"></span></div>
+    <div class="message response">Bot response: <span id="responseText"></span></div>
+    <input type="text" id="queryInput" placeholder="Enter your query">
+    <input type="submit" value="Submit Query" onclick="submitQuery()">
+  </div>
+
+  <script>
+    function uploadPDF(event) {
+      event.preventDefault();
+      document.querySelector(".upload-form").style.display = "none";
+      document.getElementById("chatContainer").style.display = "block";
+    }
+
+    function submitQuery() {
+      var query = document.getElementById("queryInput").value;
+      // Perform actions with the query, such as sending it to a server for processing
+      console.log("Submitted query:", query);
+      // Reset the query input
+      document.getElementById("queryInput").value = "";
+      // Display the query
+      document.getElementById("queryText").textContent = query;
+      // Call a function to generate and display the bot's response
+      generateBotResponse(query);
+    }
+
+    // function generateBotResponse(query) {
+    //   // Placeholder function to generate a bot response
+    //   var response = "This is the response to the query: " + query;
+    //   // Display the bot's response
+    //   document.getElementById("responseText").textContent = response;
+    // }
+    function generateBotResponse(query) {
+  // Make a GET request to the / route with the query as a parameter
+  fetch("/?query=" + encodeURIComponent(query))
+    .then(response => response.text())
+    .then(response => {
+      // Display the bot's response
+      document.getElementById("responseText").textContent = response;
+    });
+
+  }
+  </script>
+</body>
+</html>
