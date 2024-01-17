@@ -32,7 +32,6 @@ from langchain.llms import OpenAI
 
 os.environ['OPENAI_API_KEY'] = ''
 
-# OPENAI_API_KEY = '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'
 
 # print()
 # print("TEMPERATURE == 0.1")
