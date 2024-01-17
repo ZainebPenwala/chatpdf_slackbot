@@ -30,7 +30,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''
 
 # OPENAI_API_KEY = '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'
 
