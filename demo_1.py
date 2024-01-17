@@ -15,10 +15,9 @@ from langchain.chains import RetrievalQA
 
 
 
-# os.environ['OPENAI_API_KEY'] = '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'
 
-openai.api_key = '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'
-os.environ['OPENAI_API_KEY'] = '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'
+openai.api_key = ''
+os.environ['OPENAI_API_KEY'] = ''
 
 
 df = pd.read_csv('words.csv')
