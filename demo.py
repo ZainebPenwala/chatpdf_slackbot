@@ -1,10 +1,6 @@
-# OPENAI_API_KEY = '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'
-
-
 import langchain
 from langchain.document_loaders import PyPDFLoader
 import os
-# import getpass
 from langchain.vectorstores import FAISS
 from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
