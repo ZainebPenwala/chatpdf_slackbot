@@ -16,7 +16,7 @@ from langchain.embeddings.openai import OpenAIEmbeddings
 from langchain.chains import RetrievalQA
 from langchain.chat_models import ChatOpenAI
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''
 
 def buddy_qna(user_input):
     llm = ChatOpenAI(model_name="gpt-3.5-turbo",  temperature=0.5)
