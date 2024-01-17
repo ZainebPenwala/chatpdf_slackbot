@@ -11,7 +11,7 @@ from langchain.chains import RetrievalQA
 from langchain.llms import OpenAI
 
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''
 # getpass.getpass('OpenAI API Key:')
 
 ## creates an instance of the OpenAI language model
