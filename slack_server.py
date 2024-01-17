@@ -25,7 +25,7 @@
 # SLACK_SIGNING_SECRET = os.environ["SLACK_SIGNING_SECRET"]
 # SLACK_BOT_USER_ID = os.environ["SLACK_BOT_USER_ID"]
 
-# os.environ['OPENAI_API_KEY'] = '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'
+# os.environ['OPENAI_API_KEY'] = ''
 
 # # Initialize the Slack app
 # app = App(token=SLACK_BOT_TOKEN)
@@ -166,7 +166,7 @@ SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
 SLACK_SIGNING_SECRET = os.environ["SLACK_SIGNING_SECRET"]
 SLACK_BOT_USER_ID = os.environ["SLACK_BOT_USER_ID"]
 
-os.environ['OPENAI_API_KEY'] = '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'
+os.environ['OPENAI_API_KEY'] = ''
 
 # Initialize the Slack app
 app = App(token=SLACK_BOT_TOKEN)
